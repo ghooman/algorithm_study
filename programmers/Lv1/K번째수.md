@@ -19,9 +19,7 @@ function solution(array, commands) {
 
 // map을 써서 줄여보기
 function solution(array, commands) {
-    return commands.map(e => {
-        return array.slice(e[0] - 1, e[1]).sort((a, b) => a - b)[e[2]-1]
-    });
+    return commands.map(e => array.slice(e[0] - 1, e[1]).sort((a, b) => a - b)[e[2]-1]);
 }
 
 // 리턴에 사용할 빈배열을 만든다.
