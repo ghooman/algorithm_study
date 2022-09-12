@@ -28,3 +28,31 @@ let output = movingStuff([60, 80, 120, 90, 130], 140);
 console.log(output); // 4
 ```
 ## 풀이
+```javascript
+function movingStuff(stuff, limit) {
+  let count = 0
+  stuff = stuff.sort((a, b) => a - b);
+
+  while(stuff.length !== 0) {
+    if(stuff[0] + stuff[stuff.length - 1] <= limit) {
+      stuff.pop();
+      stuff.shift();
+      count++;
+    } else {
+      stuff.pop();
+      count++;
+    }
+  }
+  return count;
+}
+
+// 카운트 변수를 만든다.
+// 짐을 오름차순으로 정렬한다.
+// while문을 써서 배열의 길이가 0이 아닐때까지 반복한다.
+// if 배열의 맨 앞의 짐과 맨뒤의 짐이 리밋과 같거나 작으면
+// shift, pop을 쓰고
+// 카운트++
+// else
+// 배열 마지막 짐 pop, 카운트++
+// 리턴 카운트
+```
