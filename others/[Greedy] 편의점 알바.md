@@ -19,3 +19,24 @@ const output2 = test1(4972);
 console.log(output2); // --> 18
 ```
 ## 풀이
+```javascript
+function partTimeJob(k) {
+  let count = 0;
+  let coinArr = [500, 100, 50, 10, 5, 1]
+
+  for (let i = 0; i < coinArr.length; i++) {
+    count += Math.floor(k / coinArr[i])
+    k = k % coinArr[i]
+  }
+
+  return count
+}
+
+// 카운트 변수를 만든다.
+// 코인 배열을 만든다. 
+// 반복문으로 500원부터 1원까지 반복한다.
+// k / arr[i]의
+// 값(소수점 밑은 날린다 개수만 필요하기 때문에.)을 카운트에 넣는다.
+// k = k % arr[i]을 하여 나머지 값을 구한다.
+// 카운트를 리턴한다.
+```
